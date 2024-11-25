@@ -51,9 +51,9 @@ class CountdownTimer {
   async start(seconds, options = {}) {
     const config = { ...this.options, ...options };
 
-    if (!config.showCursor) {
-      process.stdout.write("\x1B[?25l"); // 隐藏光标
-    }
+    // if (!config.showCursor) {
+    //   process.stdout.write("\x1B[?25l"); // 隐藏光标
+    // }
 
     const {
       colors: { message: messageColor, timer: timerColor, reset },
@@ -63,23 +63,23 @@ class CountdownTimer {
     try {
       // 每秒更新显示一次倒计时
       for (let i = seconds; i > 0; i--) {
-        process.stdout.clearLine(0); // 清除当前行
-        process.stdout.cursorTo(0); // 将光标移到行首
-        const timeString = this.formatTime(i, config.format); // 格式化时间
-        process.stdout.write(
-          `${messageColor}${message}${timerColor}${timeString}${reset}` // 显示倒计时
-        );
+        // process.stdout.clearLine(0); // 清除当前行
+        // process.stdout.cursorTo(0); // 将光标移到行首
+        // const timeString = this.formatTime(i, config.format); // 格式化时间
+        // process.stdout.write(
+        //   `${messageColor}${message}${timerColor}${timeString}${reset}` // 显示倒计时
+        // );
         await new Promise((resolve) => setTimeout(resolve, 1000)); // 等待 1 秒
       }
 
-      if (config.clearOnComplete) {
-        process.stdout.clearLine(0); // 完成后清空当前行
-        process.stdout.cursorTo(0); // 将光标移到行首
-      }
+    //   if (config.clearOnComplete) {
+    //     process.stdout.clearLine(0); // 完成后清空当前行
+    //     process.stdout.cursorTo(0); // 将光标移到行首
+    //   }
     } finally {
-      if (!config.showCursor) {
-        process.stdout.write("\x1B[?25h"); // 恢复显示光标
-      }
+    //   if (!config.showCursor) {
+    //     process.stdout.write("\x1B[?25h"); // 恢复显示光标
+    //   }
     }
   }
 
