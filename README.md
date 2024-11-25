@@ -1,4 +1,6 @@
-# Humanity 测试网自动认领
+# Humanity 测试网自动认领 [去注册 https://testnet.humanity.org/login](https://testnet.humanity.org/login?ref=humainsu)
+## Depoloy TG communicate channel [TG CHANNEL](https://t.co/2f0y7mCn1K)
+## Depoloy TWITTER communicate channel [X CHANNEL](https://x.com/mooinchain) 
 
 一个用于在 Humanity Protocol 测试网上领取 THP 代币和奖励的自动化机器人。
 
